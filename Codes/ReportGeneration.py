@@ -1,8 +1,6 @@
 """
 Medical Case Report Generator using vLLM
-
-This script generates professional medical case reports from input EHR using
-a language model. It processes input data in batches and creates PubMed-style case reports.
+This script generates medical case reports from input EHR using a language model.
 """
 
 import os

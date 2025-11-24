@@ -1,3 +1,2 @@
 # Medical report generation
-Evaluating the Quality and Detectability of LLM-Generated Medical Reports in English and French Languages
-
+The Detectability Paradox: Bilingual Medical Report Generation with Open-Weight Models and the Limits of Human Oversight

@@ -79,8 +79,9 @@ def main(input_folder, output_folder):
         df = pd.read_csv(os.path.join(input_folder, cv_file), encoding='utf-8')
         df = df.sample(frac=1).reset_index(drop=True)
         
-        df_human = df.sample(n=6)
-        df_machine = df.sample(n=6)
+        # Sample n_h rows from human data, and n_m rows from machine data
+        df_human = df.sample(n=n_h)
+        df_machine = df.sample(n=n_m)
         
         # Determine language and save path
         lang = 'ENG' if 'ENG' in cv_file else 'FRE'

@@ -44,7 +44,7 @@ def compute_rouge(input_file, output_file, rouge_types=['rouge1'],
     
     # Initialize ROUGE scorer
     print(f"Computing ROUGE scores: {', '.join(rouge_types)}")
-    scorer = rouge_scorer.RougeScorer(rouge_types, use_stemmer=True)
+    scorer = rouge_scorer.RougeScorer(rouge_types)
     
     # Compute scores for each pair
     all_scores = {f'{rt}_{metric}': [] 

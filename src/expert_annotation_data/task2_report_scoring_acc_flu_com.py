@@ -79,15 +79,15 @@ def create_evaluation_excel(df_human, df_machine, save_name):
     return df
 
 
-def main(input_folder, output_folder, n_human=2, n_machine=10):
+def main(input_folder, output_folder, n_human=n_h, n_machine=n_m):
     """
     Main function to process CSV files and create evaluation Excel files.
     
     Args:
         input_folder: Path to folder containing input CSV files
         output_folder: Path to folder where output Excel files will be saved
-        n_human: Number of human reports to sample (default: H)
-        n_machine: Number of machine reports to sample (default: M)
+        n_human: Number of human reports to sample (default: n_h)
+        n_machine: Number of machine reports to sample (default: n_m)
     """
     # Create output directory if it doesn't exist
     if not os.path.exists(output_folder):
@@ -120,7 +120,7 @@ if __name__ == "__main__":
     OUTPUT_FOLDER = 'path/to/your/output/folder'  # Replace with your output folder path
     
     # Optional: customize sample sizes
-    N_HUMAN_SAMPLES = H
-    N_MACHINE_SAMPLES = M
+    N_HUMAN_SAMPLES = n_h
+    N_MACHINE_SAMPLES = n_m
     
     main(INPUT_FOLDER, OUTPUT_FOLDER, N_HUMAN_SAMPLES, N_MACHINE_SAMPLES)

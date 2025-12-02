@@ -79,7 +79,7 @@ def main(input_folder, output_folder):
         df = pd.read_csv(os.path.join(input_folder, cv_file), encoding='utf-8')
         df = df.sample(frac=1).reset_index(drop=True)
         
-        # Sample n_h rows from human data, and n_m rows from machine data
+        # Sample n_h reports from human data, and n_m reports from machine data
         df_human = df.sample(n=n_h)
         df_machine = df.sample(n=n_m)
         

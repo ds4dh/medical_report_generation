@@ -1,0 +1,14 @@
+torch==2.7.1
+transformers==4.55.4
+vllm==0.10.1.1
+pandas=2.3.3
+scikit-learn==1.7.2
+scipy==1.16.1
+rouge_score==0.1.2
+sentence-transformers==5.1.2
+sentencepiece==0.2.1
+tokenizers==0.21.4
+spacy==3.8.11
+tqdm==4.67.1
+requests==2.32.5
+setuptools==78.1.1

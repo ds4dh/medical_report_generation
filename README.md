@@ -6,7 +6,7 @@ This project investigates the quality and safety risks of using large language m
 
 ## Installation 🛠️
 
-**Note on Environment:** This project was developed and tested using **Python 3.11.14**. It is recommended to use a compatible Python version (3.11 or newer).
+This project was developed and tested using Python 3.11.14. It is recommended to use a compatible Python version (3.11 or newer).
 
 Follow these instructions to install the necessary dependencies for the project:
 
@@ -19,6 +19,7 @@ cd medical_report_generation
 
 # Install dependencies from the requirements.txt file
 pip install -r requirements.txt
+```
 
 ## Contact
 For questions or inquiries, please contact us at _hossein.rouhizadeh@unige.ch_.

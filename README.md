@@ -12,7 +12,7 @@ Follow these instructions to install the necessary dependencies for the project:
 
 ```bash
 # Clone the repository
-git clone https://github.com/ds4dh/medical_report_generation/
+git clone https://github.com/ds4dh/medical_report_generation
 
 # Change into the project directory
 cd medical_report_generation

@@ -30,7 +30,7 @@ TASK_COLUMNS = {
     'transcript': {
         'required': ['eng_ehr', 'fre_ehr', 'eng_report', 'fre_report', 
                     'eng_specialty', 'fre_specialty', 'eng_report_type', 'fre_report_type'],
-        'output': ['input_ehr', 'reference_report', 'generated_report', 
+        'output': ['ehr', 'reference_report', 'generated_report', 
                   'doctor_specialty', 'report_type']
     }
 }

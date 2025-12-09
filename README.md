@@ -68,9 +68,9 @@ cd medical_report_generation
 # Install dependencies
 pip install -r requirements.txt
 ```
-## ⚡ Quick Start
+## ⚡ Quick start
 
-### 1. Preprocess Data
+### 1. Preprocess data
 
 #### Step 1: Extract medical transcripts
 

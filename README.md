@@ -30,13 +30,13 @@ This repository contains the complete pipeline for:
 │   │
 │   ├── llm_generation/
 │   │   ├── ehr_simulation/          # EHR simulation
-│   │   │   ├── ehr_simulation.py
+│   │   │   ├── generate_ehr.py
 │   │   │   ├── config.py
 │   │   │   ├── prompts.py
 │   │   │   └── utils.py
 │   │   │
 │   │   └── report_generation/       # Medical report generation
-│   │       ├── generate.py
+│   │       ├── generate_report.py
 │   │       ├── config.py
 │   │       ├── prompts.py
 │   │       └── utils.py
@@ -94,7 +94,24 @@ python preprocessing_pmc_patients.py
     --output_dir 'english_case_reports.csv'
 ```
 
-### 2. Generate reports
+### 2. Simulate EHR
+```bash
+cd src/llm_generation/ehr_simulation
+
+python generate_ehr.py \
+    --task case_report \
+    --language english \
+    --input_file ../../../data/processed/test/case_reports.csv
+
+
+python generate_ehr.py \
+    --task transcript \
+    --language french \
+    --input_file ../../../data/processed/test/medical_transcripts_test.csv
+```
+
+
+### 3. Generate reports
 ```bash
 cd src/llm_generation/report_generation
 

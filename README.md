@@ -98,14 +98,14 @@ python preprocessing_pmc_patients.py
 ```bash
 cd src/llm_generation/report_generation
 
-# Zero-shot English case reports
+# Zeroshot English case reports
 python generate.py \
     --task case_report \
     --approach zeroshot \
     --language english \
     --input_file ../../../data/processed/test/case_reports.csv
 
-# Few-shot French transcripts
+# Fewshot French transcripts
 python generate.py \
     --task transcript \
     --approach fewshot \

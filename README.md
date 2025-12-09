@@ -68,6 +68,52 @@ cd medical_report_generation
 # Install dependencies
 pip install -r requirements.txt
 ```
+## ⚡ Quick Start
+
+### 1. Preprocess Data
+
+#### Step 1: Extract medical transcripts
+
+Scrape medical transcripts from MTSamples.com:
+```bash
+cd src/preprocessing
+
+# Scrape medical transcripts from MTSamples
+python medical_transcript_scraper.py \
+    --input_dir ../../data/raw/mtsamples_urls.csv \
+    --output_dir ../../data/raw/english_medical_transcripts.csv
+```
+#### Step 2: Extract English case reports from the PMC-Patients dataset
+To run this script, you need to download the source dataset from: https://github.com/pmc-patients/pmc-patients
+
+```bash
+cd src/preprocessing
+
+python preprocessing_pmc_patients.py
+    --input_dir path to "PMC-Patients.json" file \
+    --output_dir 'english_case_reports.csv'
+```
+
+### 2. Generate reports
+```bash
+cd src/llm_generation/report_generation
+
+# Zero-shot English case reports
+python generate.py \
+    --task case_report \
+    --approach zeroshot \
+    --language english \
+    --input_file ../../../data/processed/test/case_reports.csv
+
+# Few-shot French transcripts
+python generate.py \
+    --task transcript \
+    --approach fewshot \
+    --language french \
+    --num_shots 3 \
+    --input_file ../../../data/processed/test/transcripts.csv \
+    --dev_file ../../../data/processed/dev/transcripts.csv
+```
 
 ## Contact
 For questions or inquiries, please contact us at _hossein.rouhizadeh@unige.ch_.

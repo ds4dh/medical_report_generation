@@ -14,6 +14,44 @@ This repository contains the complete pipeline for:
    
 **Languages**: English & French  
 
+## 📁 Project Structure
+```bash
+.
+├── data/
+│   ├── raw/                         # mtsamples urls, PubMed French PMIDs
+│   └── processed/
+│       ├── dev/                     # Development set (for few-shot prompting)
+│       └── test/                    # Test set (for evaluation)
+│
+├── src/
+│   ├── preprocessing/               # Data preprocessing scripts
+│   │   ├── preprocess.py
+│   │   └── requirements.txt
+│   │
+│   ├── llm_generation/
+│   │   ├── ehr_simulation/          # EHR simulation
+│   │   │   ├── ehr_simulation.py
+│   │   │   ├── config.py
+│   │   │   ├── prompts.py
+│   │   │   └── utils.py
+│   │   │
+│   │   └── report_generation/       # Medical report generation
+│   │       ├── generate.py
+│   │       ├── config.py
+│   │       ├── prompts.py
+│   │       └── utils.py
+│   │
+│   ├── evaluation/                  # Automatic evaluation
+│   │   ├── bertscore_evaluator.py
+│   │   └── rouge_evaluator.py      
+│   │
+│   └── expert_annotation/           # Expert evaluation setup
+│       └── randomize_data.py        # Randomize samples for expert panel
+│
+├── README.md                        # This file
+└── requirements.txt                 # Python dependencies
+```
+
 ## 🚀 Installation
 
 ### Prerequisites

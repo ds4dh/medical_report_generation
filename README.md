@@ -20,7 +20,6 @@ This repository contains the complete pipeline for:
 
 - Python 3.11+
 - CUDA-capable GPU (for vLLM)
-- 16GB+ RAM recommended
 
 ### Setup
 ```bash

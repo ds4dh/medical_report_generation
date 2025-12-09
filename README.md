@@ -14,9 +14,9 @@ This repository contains the complete pipeline for:
    
 **Languages**: English & French  
 
-## 📁 Project Structure
+## 📁 Project structure
 ```bash
-.
+
 ├── data/
 │   ├── raw/                         # mtsamples urls, PubMed French PMIDs
 │   └── processed/

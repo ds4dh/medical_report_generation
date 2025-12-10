@@ -146,9 +146,8 @@ python generate.py \
     --input_file ../../../data/processed/test/transcripts.csv \
     --dev_file ../../../data/processed/dev/transcripts.csv
 ```
-cd src/authorship_classifier/training
 
-### 5. Train authorship classifier
+### 4. Train authorship classifier
 
 ```bash
 cd src/authorship_classifier/training

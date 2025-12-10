@@ -10,8 +10,7 @@ This repository contains the complete pipeline for:
 1. **Data preprocessing** - Process raw medical data
 2. **EHR simulation** - Generate synthetic electronic health records
 3. **Report generation** - Generate medical reports (zero-shot & few-shot)
-4. **Evaluation** - Automated metrics (ROUGE-1, BERTScore) and expert annotation
-5. **Authorship Classification** - Detect machine-generated vs human-written medical reports
+4. **Authorship Classification** - Detect machine-generated vs human-written medical reports
 
 **Languages**: English & French  
 

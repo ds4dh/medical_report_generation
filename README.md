@@ -11,7 +11,8 @@ This repository contains the complete pipeline for:
 2. **EHR simulation** - Generate synthetic electronic health records
 3. **Report generation** - Generate medical reports (zero-shot & few-shot)
 4. **Evaluation** - Automated metrics (ROUGE-1, BERTScore) and expert annotation
-   
+5. **Authorship Classification** - Detect machine-generated vs human-written medical reports
+
 **Languages**: English & French  
 
 ## 📁 Project structure
@@ -46,19 +47,20 @@ This repository contains the complete pipeline for:
 │   │   └── rouge_evaluator.py      
 │   │
 │   └── expert_annotation/           # Expert evaluation setup
-│       └── randomize_data.py        # Randomize samples for expert panel
-│
-├── authorship-classifier/
-│   ├── training/
-│   │   ├── config.py
-│   │   ├── dataset.py
-│   │   ├── evaluation.py
-│   │   ├── inference.py
-│   │   ├── train.py
-│   │   ├── trainer.py
-│   │   └── utils.py
-│   │ 
-│   └── ig_scores/           
+│   │    └── randomize_data.py        # Randomize samples for expert panel
+│   │
+│   └── authorship_classifier/        # Machine vs Human text detection
+│       ├── training/
+│       │   ├── train.py             # Main training script
+│       │   ├── config.py            # Configuration
+│       │   ├── dataset.py           # PyTorch Dataset
+│       │   ├── evaluation.py        # Evaluation metrics
+│       │   ├── inference.py         # Inference and predictions
+│       │   ├── trainer.py           # Training logic
+│       │   └── utils.py             # Utilities
+│       │
+│       └── ig_scores/               # Integrated Gradients analysis
+│           └── compute_ig.py        # Attribution scores      
 │       
 │ 
 ├── README.md                        # This file
@@ -144,6 +146,41 @@ python generate.py \
     --input_file ../../../data/processed/test/transcripts.csv \
     --dev_file ../../../data/processed/dev/transcripts.csv
 ```
+cd src/authorship_classifier/training
+
+### 5. Train authorship classifier
+
+```bash
+cd src/authorship_classifier/training
+
+# Train with default settings
+python train.py --data_folder /path/to/data
+
+# Train with custom model
+python train.py \
+    --data_folder /path/to/data \
+    --model_name bert-base-multilingual-cased \
+    --num_epochs 5 \
+    --batch_size 16
+```
+
+#### Required Files
+Place these files in your data folder:
+- `train.csv` - training data
+- `dev.csv` - development/validation data
+- `test.csv` - test data
+
+#### CSV format
+**Required columns**:
+- `text`: text content to classify
+- `label`: label (0 = machine, 1 = human)
+
+```csv
+text,label
+"This is machine-generated text...",0
+"This is human-written text...",1
+```
+
 
 ## Contact
 For questions or inquiries, please contact us at _hossein.rouhizadeh@unige.ch_.

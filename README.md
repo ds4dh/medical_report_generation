@@ -48,6 +48,19 @@ This repository contains the complete pipeline for:
 │   └── expert_annotation/           # Expert evaluation setup
 │       └── randomize_data.py        # Randomize samples for expert panel
 │
+├── authorship-classifier/
+│   ├── training/
+│   │   ├── config.py
+│   │   ├── dataset.py
+│   │   ├── evaluation.py
+│   │   ├── inference.py
+│   │   ├── train.py
+│   │   ├── trainer.py
+│   │   └── utils.py
+│   │ 
+│   └── ig_scores/           
+│       
+│ 
 ├── README.md                        # This file
 └── requirements.txt                 # Python dependencies
 ```

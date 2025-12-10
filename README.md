@@ -164,7 +164,7 @@ python train.py \
     --batch_size 16
 ```
 
-#### Required Files
+#### Required files
 Place these files in your data folder:
 - `train.csv` - training data
 - `dev.csv` - development data

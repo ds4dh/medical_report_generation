@@ -25,8 +25,9 @@ This repository contains the complete pipeline for:
 │
 ├── src/
 │   ├── preprocessing/               # Data preprocessing scripts
-│   │   ├── preprocess.py
-│   │   └── requirements.txt
+│   │   ├── case_report_extractor.py         # Extract the French case reports    
+│   │   ├── preprocessing_pmc_patients.py    # Extract the English case reports
+│   │   └── medical_transcript_scraper.py    # Extract the English medical transcript
 │   │
 │   ├── llm_generation/
 │   │   ├── ehr_simulation/          # EHR simulation

@@ -88,7 +88,6 @@ pip install -r requirements.txt
 ### 1. Preprocess data
 
 #### Step 1: Extract medical transcripts
-
 Scrape medical transcripts from MTSamples.com:
 ```bash
 cd src/preprocessing
@@ -98,16 +97,22 @@ python medical_transcript_scraper.py \
     --input_dir ../../data/raw/mtsamples_urls.csv \
     --output_dir ../../data/raw/english_medical_transcripts.csv
 ```
-#### Step 2: Extract English case reports from the PMC-Patients dataset
-To run this script, you need to download the source dataset from: https://github.com/pmc-patients/pmc-patients
 
+#### Step 2: Extract French case reports from PubMed
 ```bash
 cd src/preprocessing
+python case_report_extractor.py ../../data/raw/french_case_reports_pmc_ids.txt
+```
 
+#### Step 3: Extract English case reports from the PMC-Patients dataset
+To run this script, you need to download the source dataset from: https://github.com/pmc-patients/pmc-patients
+```bash
+cd src/preprocessing
 python preprocessing_pmc_patients.py
     --input_dir path to "PMC-Patients.json" file \
     --output_dir 'english_case_reports.csv'
 ```
+
 
 ### 2. Simulate EHR
 ```bash

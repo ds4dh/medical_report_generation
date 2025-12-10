@@ -167,7 +167,7 @@ python train.py \
 #### Required Files
 Place these files in your data folder:
 - `train.csv` - training data
-- `dev.csv` - development/validation data
+- `dev.csv` - development data
 - `test.csv` - test data
 
 #### CSV format

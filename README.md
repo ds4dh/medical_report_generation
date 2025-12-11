@@ -99,8 +99,10 @@ python medical_transcript_scraper.py \
 ```
 
 #### Step 2: Extract French case reports from PubMed
+Download each paper using its PMC ID and extract the case report section.
 ```bash
 cd src/preprocessing
+
 python case_report_extractor.py ../../data/raw/french_case_reports_pmc_ids.txt
 ```
 

@@ -93,6 +93,7 @@ def main(input_folder, output_folder):
 
 
 if __name__ == "__main__":
+    
     # Configure your paths here
     INPUT_FOLDER = 'path/to/your/input/folder'  # Replace with your input folder path
     OUTPUT_FOLDER = 'path/to/your/output/folder'  # Replace with your output folder path
